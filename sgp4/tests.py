@@ -114,10 +114,10 @@ class Tests(TestCase):
         # we can replace it with the one from Python's math module.
 
         np.testing.assert_allclose(newtonnu(1.0, 2.9),   # parabolic
-                         (8.238092752965605, 194.60069989482898))
+                         (8.238092752965605, 194.60069989482898), rtol=1e-15)
 
         np.testing.assert_allclose(newtonnu(1.1, 2.7),   # hyperbolic
-                         (4.262200676156417, 34.76134082028372))
+                         (4.262200676156417, 34.76134082028372), rtol=1e-15)
 
     def test_good_tle_checksum(self):
         for line, expected in (good1, 3), (good2, 7):
